@@ -24,7 +24,6 @@ const config = {
     },
   },
   indent: "  ",
-  semverRange: "",
   dependencyTypes: ["dev", "overrides", "peer", "pnpmOverrides", "prod", "resolutions"],
   source: ["package.json", "apps/*/package.json", "packages/*/package.json"],
   sortAz: ["contributors", "dependencies", "devDependencies", "keywords", "peerDependencies", "resolutions", "scripts"],

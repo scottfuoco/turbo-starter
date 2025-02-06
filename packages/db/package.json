@@ -1,0 +1,54 @@
+{
+  "name": "@packages/db",
+  "description": "",
+  "version": "1.0.0",
+  "author": "",
+  "dependencies": {
+    "drizzle-orm": "^0.39.2",
+    "drizzle-zod": "^0.7.0",
+    "postgres": "^3.4.5",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@tooling/eslint": "0.0.0",
+    "@tooling/prettier": "0.0.0",
+    "@tooling/tsconfig": "0.0.0",
+    "dotenv": "^16.4.7",
+    "dotenv-cli": "^8.0.0",
+    "drizzle-kit": "^0.30.4",
+    "drizzle-seed": "^0.3.1",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsx": "^4.19.2",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./src/client.ts"
+    },
+    "./schema": {
+      "types": "./dist/schema.d.ts",
+      "default": "./src/schema.ts"
+    }
+  },
+  "keywords": [],
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "push": "pnpm with-env drizzle-kit push",
+    "seed": "pnpm with-env tsx src/seed.ts",
+    "studio": "pnpm with-env drizzle-kit studio",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "type": "module"
+}

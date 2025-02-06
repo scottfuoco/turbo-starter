@@ -1,3 +1,3 @@
-# `@tooling/eslint-config`
+# `@tooling/eslint`
 
 Collection of internal eslint configurations.

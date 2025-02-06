@@ -1,6 +1,6 @@
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { ArrowRight, GitMerge, Minimize2, Layout, Palette } from "lucide-react";
+import { ArrowRight, GitMerge, Minimize2, Layout, Palette, Database } from "lucide-react";
 import Link from "next/link";
 import type React from "react";
 
@@ -68,6 +68,11 @@ export default function LandingPage() {
               icon={<Palette className="h-8 w-8 text-primary" />}
               title="shadcn/ui Components"
               description="Beautiful, accessible, and customizable components ready for your project. 🧩"
+            />
+            <FeatureCard
+              icon={<Database className="h-8 w-8 text-primary" />}
+              title="PostgreSQL Integration"
+              description="Built-in PostgreSQL setup with Drizzle ORM. Check out /postgres route for implementation details. 🗄️"
             />
           </div>
         </section>
