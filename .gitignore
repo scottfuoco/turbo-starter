@@ -40,3 +40,6 @@ yarn-error.log*
 .cache/
 
 playground/
+
+# TypeScript build info
+**/.cache/tsbuildinfo.json
