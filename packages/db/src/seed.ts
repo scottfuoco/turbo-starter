@@ -1,4 +1,5 @@
-import { db, schema } from "./client";
+import { db } from "./client";
+import * as schema from "./schema";
 import { seed } from "drizzle-seed";
 
 const main = async () => {

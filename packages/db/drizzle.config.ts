@@ -1,14 +1,17 @@
 import type { Config } from "drizzle-kit";
-import { getDbUrl } from "./src/functions";
 
-if (!process.env.PROD_POSTGRES_URL && !process.env.DEV_POSTGRES_URL) {
+if (!process.env.POSTGRES_URL) {
   throw new Error("Missing POSTGRES_URL");
 }
 
+const nonPoolingUrl = process.env.POSTGRES_URL!.replace(":6543", ":5432");
+
+console.log({ nonPoolingUrl });
+
 export default {
   schema: "./src/schema.ts",
-  out: "./.drizzle/migrations",
+  out: "./drizzle",
   dialect: "postgresql",
-  dbCredentials: { url: getDbUrl() as string, ssl: process.env.NODE_ENV === "production" ? "require" : undefined },
+  dbCredentials: { url: nonPoolingUrl },
   casing: "snake_case",
 } satisfies Config;
